@@ -1,0 +1,20 @@
+/* Import fonts Noto Serif JP */
+@font-face {
+  font-family: "NotoSerifJP";
+  src: url("./Noto_Serif_JP/NotoSerifJP-Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSerifJP-Light";
+  src: url("./Noto_Serif_JP/NotoSerifJP-Light.otf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSerifJP-Bold";
+  src: url("./Noto_Serif_JP/NotoSerifJP-Bold.otf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}

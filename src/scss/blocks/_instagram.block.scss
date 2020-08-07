@@ -1,0 +1,73 @@
+.instagram-block {
+  &__title {
+    padding-top: 3em;
+    display: flex;
+    align-items: center;
+    &__link {
+      display: flex;
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: center;
+      font-family: "NotoSerifJP-Bold";
+      margin-left: 55px;
+      margin-bottom: 20px;
+      color: $color-dark-dark;
+      font-size: bold;
+      transition: .3s color ease;
+      position: relative;
+      &:hover{
+        color: $color-dark;
+      }
+      img {
+        width: 33px;
+        height: 33px;
+        display: block;
+        transition: 0.2s linear all;
+        position: absolute;
+        left: -50px;
+        top: 5px;
+      }
+    }
+  }
+  .instagram-block__title__link {
+    &:hover img {
+      animation: wobble-hor-bottom 0.8s both;
+      @keyframes wobble-hor-bottom {
+        0%,
+        100% {
+                  transform: translateX(0%);
+                  transform-origin: 50% 50%;
+        }
+        15% {
+                  transform: translateX(-15px) rotate(-3deg);
+        }
+        30% {
+                  transform: translateX(7px) rotate(3deg);
+        }
+        45% {
+                  transform: translateX(-7px) rotate(-1.3deg);
+        }
+        60% {
+                  transform: translateX(4.5px) rotate(1deg);
+        }
+        75% {
+                  transform: translateX(-3px) rotate(-3deg);
+        }
+      }
+      
+    }
+  }
+
+  &__item {
+    border-radius: 50%;
+    transition: 0.2s cubic-bezier(0, 1.26, 0.48, 1.47) all;
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}
+.lightwidget-widget {
+  width: 100%;
+  border: 0;
+  overflow: hidden;
+}

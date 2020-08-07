@@ -1,0 +1,10 @@
+.block-footer{
+    margin: 2em auto 30px auto;
+    color: $color-dark;
+    a{
+        color: $color-dark;
+        &:active{
+            color: $color-dark;
+        }
+    }
+}

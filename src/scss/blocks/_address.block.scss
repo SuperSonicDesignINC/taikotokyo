@@ -1,0 +1,115 @@
+.block-address {
+  margin: 1em auto;
+  padding: 3em 0 6em 0;
+  &__description-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    img {
+      width: 150px;
+    }
+  }
+
+  &__title-description {
+    font-size: 20px;
+    margin: 3em 0;
+    font-weight: 600;
+  }
+  &__description-text {
+    font-size: 18px;
+    line-height: 38px;
+    width: 836px;
+    margin: auto;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5em;
+  }
+  &__slide {
+    &__carousell {
+      margin: 8em 0;
+      // .slick-track{
+      //   display: flex!important;
+      //   width: 100%!important;
+      // }
+
+      .slick-slide {
+        padding: 0 5px;
+        div {
+          outline: none !important;
+        }
+      }
+      .slick-dots {
+        li {
+          button::before {
+            font-size: 10px;
+          }
+        }
+      }
+      .slick-prev {
+        left: 10px;
+        z-index: 2;
+        &::before {
+          color: $color-contrast;
+        }
+      }
+      .slick-next {
+        right: 10px;
+        z-index: 2;
+        &::before {
+          color: $color-contrast;
+        }
+      }
+    }
+    &__images-no-slide {
+      margin: 8em auto;
+      display: flex;
+      div{
+        margin: 0 10px;
+      }
+    }
+    &__image {
+      width: 100%;      
+      object-fit: cover;
+      height: 300px;
+      outline: none !important;
+    }
+    &__no-slide {
+      width: 100%;
+      object-fit: cover;
+      height: 300px;
+      outline: none !important;
+    }
+    &__btns {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      a {
+        width: 300px;
+        margin: 0 10px;
+        padding: 15px 20px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        display: inline-block;
+        border: 1px solid $color-dark;
+        background: $color-contrast;
+        color: $color-dark-dark;
+        transition: 0.2s ease all;
+        &:hover {
+          transform: scale(1.02);
+          color: $color-contrast;
+          background: $color-dark-dark;
+        }
+        &:active {
+          transform: scale(1);
+          color: $color-contrast;
+          background: $color-dark-dark;
+        }
+      }
+    }
+  }
+}

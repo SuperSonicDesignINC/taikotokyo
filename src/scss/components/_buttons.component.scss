@@ -1,0 +1,57 @@
+.btn-menu {
+  width: 45px;
+  height: 45px;
+  border: none;
+  display: flex;
+  display: block;
+  font-size: 1.3rem;
+  border-radius: 2px;
+  color: $color-dark;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  img {
+    width: 30px;
+  }
+}
+
+.btn-default {
+  padding: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  &--primary {
+    color: $color-primary-contrast;
+    background: $color-primary;
+    transition: .2s ease all;
+    box-shadow: 0 -5px 0 inset $color-primary-dark;
+    &:hover{
+      box-shadow: none;
+      background: $color-primary-light;
+      transform: translate3d(0px, -5px, 1px);
+    }
+    &:active{
+      background: $color-primary-dark;
+    }
+  }
+  &--secondary {
+    transition: .2s ease all;
+    color: $color-secondary-text;
+    background: $color-secondary;
+    box-shadow: 0 -5px 0 inset $color-secondary-dark;
+    &:hover{
+      box-shadow: none;
+      background: $color-secondary-light;
+      transform: translate3d(0px, -5px, 1px);
+    }
+    &:active{
+      background: $color-secondary-dark;
+    }
+  }
+}
+
+.btn-register {
+  width: 400px;
+  font-size: 1.3rem;
+  margin: 20px 0;
+}

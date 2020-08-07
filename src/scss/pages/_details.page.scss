@@ -1,0 +1,111 @@
+.content-detail {
+  margin-top: 2.5em;
+  &__head-title {
+    letter-spacing: 2px;
+    color: $color-dark;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  &__description-banner {
+    color: $color-dark;
+    margin-top: 10px;
+    font-family: "NotoSerifJP-Light";
+  }
+  &__index {
+    color: $color-dark;
+    font-family: "NotoSerifJP-Light";
+    padding: 15px;
+    background: $color-dark-contrast;
+    h5 {
+      cursor: pointer;
+      padding: 10px 0;
+      position: relative;
+      color: $color-dark;
+      &::before {
+        content: "";
+        right: 5px;
+        top: 15px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-top: 8px solid $color-dark;
+        border-bottom: 8px solid transparent;
+      }
+    }
+    ul {
+      li {     
+        letter-spacing: 2px;   
+        font-size: 16px;     
+      }
+    }
+  }
+  &--test {
+    margin: 20px 0;
+    height: 250px;
+    background: $color-primary-light;
+  }
+  &__widget-right {
+    height: 100%;
+    width: 100%;
+  }
+  &__article-widget{
+    margin-top: 10px;
+    color: $color-dark;
+    h4{
+      padding: 5px 0;
+      font-size: .9rem;
+      border-bottom: 2px solid $color-dark;
+    }
+    p{
+      font-size: .9rem;
+      color: $color-dark-light;
+    }
+  }
+}
+.show-widget {  
+  max-height: 0;
+  overflow: hidden;
+  transform-origin: top;  
+  animation-duration: 0.35s;
+  animation-name: show-widget;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  @keyframes show-widget {
+    to {
+      max-height: 300px;
+    }
+  }
+}
+
+.hidde-widget {
+  overflow: hidden;
+  max-height: 300px;
+  transform-origin: top;
+  animation-duration: 0.35s;
+  animation-name: hidde-widget;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  @keyframes hidde-widget {
+    to {
+      max-height: 0;
+    }
+  }
+}
+
+.fixed-widget {
+  top: 0;
+  height: 92%;
+  bottom: auto;
+  max-width: 295px;
+  margin-top: 2%;
+  position: fixed;
+  overflow-y: auto;
+  @media screen and (min-width: 1200px) {
+    max-width: 355px;
+  }
+}
