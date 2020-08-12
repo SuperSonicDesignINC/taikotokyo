@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Slider from "react-slick"
-import axios from "axios"
-import { URL } from "../config/config"
-
+import Img from "gatsby-image"
+import topSlide from "../hooks/useTopSlides"
 export interface SlideMainBlockProps {}
 const SlideMainBlock: React.SFC<SlideMainBlockProps> = () => {
-  const [dataSlide, setDataSlide] = useState([])
-  useEffect(() => {
-    const getSlides = async () => {
-      const data = await axios.get(`${URL}/top-slides`)
-      const dataSLIDES = data.data.sort((a, b) => a.Order - b.Order)
-      setDataSlide(dataSLIDES)
-    }
-    getSlides()
-  }, [])
+
+  
+  const dataREST = topSlide()
+  const slides = dataREST.allStrapiTopSlide.nodes
+
   const settings = {
     fade: true,
     dots: false,
@@ -30,11 +25,11 @@ const SlideMainBlock: React.SFC<SlideMainBlockProps> = () => {
     <section className="container-full">
       <div className="block-slide">
         <Slider {...settings}>
-          {dataSlide.map((data, i) => (
+          {slides.map((data, i) => (
             <div key={i}>
               {data.Image.map((image, j) => (
                 <div key={j}>
-                  <img src={image.url} alt={data.Description} />
+                  <img src={image.url} alt={data.Description} />                  
                 </div>
               ))}
             </div>

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "日本料理TAIKO",
-    titleTemplate: "日本料理TAIKO",
-    description: "日本料理TAIKO",
-    url: "https://taikotokyo.herokuapp.com/", // No trailing slash allowed!
-    image: "src/images/gatsby-icon.png",
-    twitterUsername: "@nihonryouritaiko",
+    title: `日本料理TAIKO`,
+    titleTemplate: `日本料理TAIKO`,
+    description: `日本料理TAIKO`,
+    siteUrl: `https://taikotokyo.com/`,
+    image: `src/images/taiko-icon.png`,
+    twitterUsername: `@nihonryouritaiko`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,6 +36,39 @@ module.exports = {
         theme_color: `#0f0f0f`,
         display: `minimal-ui`,
         icon: `src/images/taiko-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        // apiURL: `http://localhost:1337`,
+        apiURL: `https://taiko-admin.herokuapp.com`,
+        queryLimit: -1, // Default to 100
+        contentTypes: [
+          `notice`,
+          `top-slide`,
+          `about-taiko`,
+          `menu-slide`,
+          `menu`,
+          `taiko-address`,
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-htaccess`,
+      options: {        
+        https: true,
+        www: true,
+        SymLinksIfOwnerMatch: true,
+        host: "www.taikotokyo.com", 
+        redirect: [
+          "RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]",
+          {
+            from: "http://taikotokyo.com",
+            to: "https://taikotokyo.com",
+          },
+        ],
       },
     },
   ],

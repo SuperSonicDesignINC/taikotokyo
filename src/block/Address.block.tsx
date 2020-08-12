@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Slider from "react-slick"
 import axios from "axios"
 import { URL } from "../config/config"
+import useSlideMenu from "../hooks/useSlideMenu"
 export interface AddressBlockProps {}
 const logo = require("../images/body-logo.svg") as string
 const AddressBlock: React.SFC<AddressBlockProps> = () => {
@@ -11,7 +12,8 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
     FoodLink: "",
     DrinkLink: "",
   })
-
+  const slideMENU = useSlideMenu()
+  const dataSlideMenu = slideMENU.allStrapiMenuSlide.nodes
   const [aboutTaiko, setAboutTaiko] = useState({
     Description: "",
     Title: "",
@@ -32,7 +34,7 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
     }
 
     // Get Notice
-    const getNotice = async () => {      
+    const getNotice = async () => {
       const dataREST = await axios.get(`${URL}/notices`)
       const noticeFilter = dataREST.data.filter(notice => notice.State === true)
       if (noticeFilter[0] === undefined) {
@@ -52,17 +54,10 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
     // Get menu
     const getMenu = async () => {
       const datREST = await axios.get(`${URL}/menus`)
-      const dataMENU = datREST.data.filter(menu => menu.State === true)
+      const dataMENU = datREST.data.filter(menu => menu.State === true)      
       setMenu(dataMENU[0])
     }
     getMenu()
-
-    const getSlidesMenu = async () => {
-      const dataREST = await axios.get(`${URL}/menu-slides`)
-      const dataSLIDEMENU = dataREST.data.sort((a, b) => a.Order - b.Order)
-      setSlideMenu(dataSLIDEMENU)
-    }
-    getSlidesMenu()
   }, [])
 
   const settings = {
@@ -150,10 +145,10 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
             ドリンクメニュー
           </a>
         </div>
-        {slideMenu.length > 2 ? (
+        {dataSlideMenu.length > 2 ? (
           <div className="block-address__slide__carousell">
             <Slider {...settings}>
-              {slideMenu.map((dataSlideMenu, i) => (
+              {dataSlideMenu.map((dataSlideMenu, i) => (
                 <div key={i}>
                   {dataSlideMenu.Image.map((imageMenu, j) => (
                     <img
@@ -169,7 +164,7 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
           </div>
         ) : (
           <div className="container block-address__slide__images-no-slide">
-            {slideMenu.map((dataSlideMenu, i) => (
+            {dataSlideMenu.map((dataSlideMenu, i) => (
               <div key={i}>
                 {dataSlideMenu.Image.map((imageMenu, j) => (
                   <img
