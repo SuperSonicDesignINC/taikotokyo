@@ -54,22 +54,5 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-htaccess`,
-      options: {
-        https: true,
-        www: true,
-        SymLinksIfOwnerMatch: true,
-        host: "www.taikotokyo.com",
-        redirect: [
-          "RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]",
-          {
-            from: "http://taikotokyo.com",
-            to: "https://taikotokyo.com",
-          },
-        ],
-      },
-    },
   ],
 }
