@@ -2,13 +2,10 @@ import React from "react"
 import Slider from "react-slick"
 import Img from "gatsby-image"
 import topSlide from "../hooks/useTopSlides"
+import { useStaticQuery, graphql } from "gatsby"
 export interface SlideMainBlockProps {}
 const SlideMainBlock: React.SFC<SlideMainBlockProps> = () => {
-
-  
   const dataREST = topSlide()
-  const slides = dataREST.allStrapiTopSlide.nodes
-
   const settings = {
     fade: true,
     dots: false,
@@ -25,11 +22,11 @@ const SlideMainBlock: React.SFC<SlideMainBlockProps> = () => {
     <section className="container-full">
       <div className="block-slide">
         <Slider {...settings}>
-          {slides.map((data, i) => (
+          {dataREST.map((data, i) => (
             <div key={i}>
-              {data.Image.map((image, j) => (
+              {data.image.map((image, j) => (
                 <div key={j}>
-                  <img src={image.url} alt={data.Description} />                  
+                  <img src={image.url} alt={data.description} />
                 </div>
               ))}
             </div>

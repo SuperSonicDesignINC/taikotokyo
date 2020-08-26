@@ -1,40 +1,23 @@
 import React, { useState, useEffect } from "react"
 import { URL } from "../config/config"
 import axios from "axios"
+import useAddress from "../hooks/useAddress"
 export interface LocationRefBlockProps {}
 
 const LocationRefBlock: React.SFC<LocationRefBlockProps> = () => {
-
-  const [address, setAddress] = useState({
-    Address: "",
-    MTimeOpen: "",
-    MTimeClose: "",
-    ATimeOpen: "",
-    ATimeClose: "",
-    ShortDescription: "",
-    ReservationPhone: "",
-  })
-  useEffect(() => {
-    const getAddress = async () => {
-      const dataREST = await axios.get(`${URL}/taiko-addresses`)
-      const dataAddres = dataREST.data.filter(address => address.State === true)
-      setAddress(dataAddres[0])
-    }
-    getAddress()
-  }, [])
-
+  const dataADDRESS = useAddress()
   return (
     <section id="contact" className="container block-location">
       <div className="container block-location__open-hour">
         <h5 className="block-location__title-location">日本料理 TAIKO</h5>
         <p>
-          住所：<span dangerouslySetInnerHTML={{__html: `${address.Address}`}}></span> <br />
-          営業時間 <br />昼 {address.MTimeOpen.substr(0, 5)} ～
-          {address.MTimeClose.substr(0, 5)} <br />夜{" "}
-          {address.ATimeOpen.substr(0, 5)} ～ {address.ATimeClose.substr(0, 5)}{" "}
+          住所：<span dangerouslySetInnerHTML={{__html: `${dataADDRESS[0].address}`}}></span> <br />
+          営業時間 <br />昼 {dataADDRESS[0].mTimeOpen.substr(0, 5)}～
+          {dataADDRESS[0].mTimeClose.substr(0, 5)} <br />夜
+          {dataADDRESS[0].aTimeOpen.substr(0, 5)}～{dataADDRESS[0].aTimeClose.substr(0, 5)}
           <br />
-          <span dangerouslySetInnerHTML={{__html: `${address.ShortDescription}`}}></span> <br />
-          ご予約はお電話にて：{address.ReservationPhone} <br />
+          <span dangerouslySetInnerHTML={{__html: `${dataADDRESS[0].shortDescription}`}}></span> <br />
+          ご予約はお電話にて：{dataADDRESS[0].reservationPhone} <br />
         </p>
       </div>
       <iframe

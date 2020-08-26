@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import { URL } from "../config/config"
-import axios from "axios"
+import useMenu from "../hooks/useMenu"
 const logo = require("../images/header-logo.svg") as string
 const iconMenu = require("../images/icons/icon-menu.svg") as string
 const iconInstagram = require("../images/icons/instagram.svg") as string
 export interface HeaderProps {}
 
 const Header: React.SFC<HeaderProps> = () => {
+  const dataMENUPDF = useMenu()
   const [menuPDF, setMenuFood] = useState({
     FoodLink: "",
     DrinkLink: "",
@@ -27,14 +27,6 @@ const Header: React.SFC<HeaderProps> = () => {
     } else {
       HEADER_ELEMENT?.classList.remove("nav-bar-scroll")
     }
-
-    // Get menu
-    const getMenu = async () => {
-      const datREST = await axios.get(`${URL}/menus`)
-      const dataMENU = datREST.data.filter(menu => menu.State === true)
-      setMenuFood(dataMENU[0])
-    }
-    getMenu()
   }, [])
   const [showMenu, setMenu] = useState(false)
 
@@ -93,14 +85,14 @@ const Header: React.SFC<HeaderProps> = () => {
                 <div className="container">
                   <ul>
                     {menuItems.map((item, i) => (
-                      <li key={i} onClick={ () => scrollTo(item.target)}>
+                      <li key={i} onClick={() => scrollTo(item.target)}>
                         {i === 2 || i === 3 ? (
                           <a
                             href={
                               i === 2
-                                ? menuPDF.FoodLink
+                                ? dataMENUPDF[0].foodMenu
                                 : i === 3
-                                ? menuPDF.DrinkLink
+                                ? dataMENUPDF[0].drinkMenu
                                 : ""
                             }
                             target="_blank"

@@ -43,7 +43,7 @@ module.exports = {
       options: {
         // apiURL: `http://localhost:1337`,
         apiURL: `https://taiko-admin.herokuapp.com`,
-        queryLimit: -1, // Default to 100
+        queryLimit: -1,
         contentTypes: [
           `notice`,
           `top-slide`,
@@ -57,11 +57,11 @@ module.exports = {
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-htaccess`,
-      options: {        
+      options: {
         https: true,
         www: true,
         SymLinksIfOwnerMatch: true,
-        host: "www.taikotokyo.com", 
+        host: "www.taikotokyo.com",
         redirect: [
           "RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]",
           {

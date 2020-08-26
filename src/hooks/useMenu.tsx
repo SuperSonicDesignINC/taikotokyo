@@ -11,5 +11,8 @@ export default function useMenu() {
       }
     }
   `)
-  return menus
+  return menus.allStrapiMenu.nodes.map(menu => ({
+    drinkMenu: menu.DrinkLink,
+    foodMenu: menu.FoodLink
+  }))
 }

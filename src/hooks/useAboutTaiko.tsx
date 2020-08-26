@@ -11,5 +11,8 @@ export default function useAboutTaiko() {
       }
     }
   `)
-  return dataREST
+  return dataREST.allStrapiAboutTaiko.nodes.map(aboutTaiko => ({
+    description: aboutTaiko.Description,
+    title: aboutTaiko.Title,
+  }))
 }

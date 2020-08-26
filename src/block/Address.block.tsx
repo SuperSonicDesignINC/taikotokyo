@@ -1,65 +1,18 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Slider from "react-slick"
-import axios from "axios"
-import { URL } from "../config/config"
+
+import useNotice from "../hooks/useNotice"
 import useSlideMenu from "../hooks/useSlideMenu"
+import useMenu from "../hooks/useMenu"
+import useAboutTaiko from "../hooks/useAboutTaiko"
 export interface AddressBlockProps {}
 const logo = require("../images/body-logo.svg") as string
 const AddressBlock: React.SFC<AddressBlockProps> = () => {
-  // About taiko
-  const [slideMenu, setSlideMenu] = useState([])
-  const [menu, setMenu] = useState({
-    FoodLink: "",
-    DrinkLink: "",
-  })
-  const slideMENU = useSlideMenu()
-  const dataSlideMenu = slideMENU.allStrapiMenuSlide.nodes
-  const [aboutTaiko, setAboutTaiko] = useState({
-    Description: "",
-    Title: "",
-  })
-  // Notice taiko
-  const [notice, setNotice] = useState({
-    Description: "",
-    Link: "",
-    News: "",
-  })
-  const [activeState, setActiveState] = useState(false)
-  useEffect(() => {
-    const mediaSmarth = window.matchMedia("(max-width: 992px)").matches
-    if (!mediaSmarth) {
-      setActiveState(mediaSmarth)
-    } else {
-      setActiveState(mediaSmarth)
-    }
-
-    // Get Notice
-    const getNotice = async () => {
-      const dataREST = await axios.get(`${URL}/notices`)
-      const noticeFilter = dataREST.data.filter(notice => notice.State === true)
-      if (noticeFilter[0] === undefined) {
-        setNotice(noticeFilter[0])
-      } else {
-        setNotice(noticeFilter[0])
-      }
-    }
-    getNotice()
-    // Get About TAIKO
-    const getAboutTaiko = async () => {
-      const dataREST = await axios.get(`${URL}/about-taikos`)
-      const dataAboutTaiko = dataREST.data.filter(about => about.State === true)
-      setAboutTaiko(dataAboutTaiko[0])
-    }
-    getAboutTaiko()
-    // Get menu
-    const getMenu = async () => {
-      const datREST = await axios.get(`${URL}/menus`)
-      const dataMENU = datREST.data.filter(menu => menu.State === true)      
-      setMenu(dataMENU[0])
-    }
-    getMenu()
-  }, [])
-
+  const dataNOTICE = useNotice()
+  const dataMENUSLIDE = useSlideMenu()
+  const dataMENUPDF = useMenu()
+  const dataABOUT = useAboutTaiko()
+  
   const settings = {
     centerMode: true,
     centerPadding: "50px",
@@ -90,19 +43,19 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
   }
   return (
     <section id="about" className="container-full block-address">
-      {notice ? (
+      {dataNOTICE[0] ? (
         <div className="container">
           <div className="block-slide__new">
             <span>お知らせ</span>
             <p>
               <span
                 dangerouslySetInnerHTML={{
-                  __html: `${notice.Description}`,
+                  __html: `${dataNOTICE[0].description}`,
                 }}
               ></span>
-              {notice.Link !== null ? (
-                <a href={notice.Link} target="_blank" rel="noreferrer">
-                  {notice.News}
+              {dataNOTICE[0].link !== "" ? (
+                <a href={dataNOTICE[0].link} target="_blank" rel="noreferrer">
+                  {dataNOTICE[0].news}
                 </a>
               ) : (
                 ""
@@ -122,7 +75,7 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
             <p
               className="block-address__title-description"
               dangerouslySetInnerHTML={{
-                __html: `${aboutTaiko.Title}`,
+                __html: `${dataABOUT[0].title}`,
               }}
             ></p>
           </div>
@@ -132,30 +85,30 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
         <p
           className="u-text-center block-address__description-text"
           dangerouslySetInnerHTML={{
-            __html: `${aboutTaiko.Description}`,
+            __html: `${dataABOUT[0].description}`,
           }}
         ></p>
       </div>
       <div className="block-address__slide">
         <div className="block-address__slide__btns">
-          <a href={menu.FoodLink} target="_blank" rel="noreferrer">
+          <a href={dataMENUPDF[0].foodMenu} target="_blank" rel="noreferrer">
             お品書き
           </a>
-          <a href={menu.DrinkLink} target="_blank" rel="noreferrer">
+          <a href={dataMENUPDF[0].drinkMenu} target="_blank" rel="noreferrer">
             ドリンクメニュー
           </a>
         </div>
-        {dataSlideMenu.length > 2 ? (
+        {dataMENUSLIDE.length > 2 ? (
           <div className="block-address__slide__carousell">
             <Slider {...settings}>
-              {dataSlideMenu.map((dataSlideMenu, i) => (
+              {dataMENUSLIDE.map((dataMENUSLIDE, i) => (
                 <div key={i}>
-                  {dataSlideMenu.Image.map((imageMenu, j) => (
+                  {dataMENUSLIDE.image.map((imageMenu, j) => (
                     <img
                       key={j}
                       className="block-address__slide__image"
                       src={imageMenu.url}
-                      alt={dataSlideMenu.Description}
+                      alt={dataMENUSLIDE.description}
                     />
                   ))}
                 </div>
@@ -164,14 +117,14 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
           </div>
         ) : (
           <div className="container block-address__slide__images-no-slide">
-            {dataSlideMenu.map((dataSlideMenu, i) => (
+            {dataMENUSLIDE.map((dataMENUSLIDE, i) => (
               <div key={i}>
-                {dataSlideMenu.Image.map((imageMenu, j) => (
+                {dataMENUSLIDE.image.map((imageMenu, j) => (
                   <img
                     key={j}
                     className="block-address__slide__no-slide"
                     src={imageMenu.url}
-                    alt={dataSlideMenu.Description}
+                    alt={dataMENUSLIDE.description}
                   />
                 ))}
               </div>

@@ -13,5 +13,8 @@ export default function useSlideMenu() {
       }
     }
   `)
-  return dataSlideMenu
+  return dataSlideMenu.allStrapiMenuSlide.nodes.map(menu => ({
+    description: menu.Description,
+    image: menu.Image,
+  }))
 }

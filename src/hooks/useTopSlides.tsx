@@ -15,5 +15,8 @@ export default function useTopSlides() {
       }
     }
   `)
-  return topSlide
+  return topSlide.allStrapiTopSlide.nodes.map(slide => ({
+    image: slide.Image,
+    description: slide.Description,
+  }))
 }
