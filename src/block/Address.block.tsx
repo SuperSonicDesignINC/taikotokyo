@@ -46,21 +46,14 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
       {dataNOTICE[0] ? (
         <div className="container">
           <div className="block-slide__new">
-            <span>お知らせ</span>
-            <p>
-              <span
+            <span><b>{dataNOTICE[0].news}</b></span>
+            <div>
+              <p
                 dangerouslySetInnerHTML={{
                   __html: `${dataNOTICE[0].description}`,
                 }}
-              ></span>
-              {dataNOTICE[0].link !== "" ? (
-                <a href={dataNOTICE[0].link} target="_blank" rel="noreferrer">
-                  {dataNOTICE[0].news}
-                </a>
-              ) : (
-                ""
-              )}
-            </p>
+              ></p>
+            </div>
           </div>
         </div>
       ) : (
