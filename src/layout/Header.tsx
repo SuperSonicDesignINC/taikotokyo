@@ -31,6 +31,7 @@ const Header: React.SFC<HeaderProps> = () => {
   const [showMenu, setMenu] = useState(false)
 
   const [menuItems] = useState([
+    { id: 0, item: "お知らせ", target: "#news" },
     { id: 1, item: "TAIKO について", target: "#about" },
     { id: 2, item: "メニュー", target: "#menu" },
     { id: 3, item: "お品書き", target: "#menu" },

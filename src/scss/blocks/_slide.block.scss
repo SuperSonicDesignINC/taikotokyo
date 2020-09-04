@@ -7,7 +7,7 @@
     text-align: center;
     padding: 2em 0 3.9em 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    margin-bottom: 8em;
+    // margin-bottom: 8em;
     p,
     span {
       margin: 1.5em 0;
@@ -15,16 +15,15 @@
     }
     p {
       margin: 1.5em auto;
-      width: 500px;
-      line-height: 3em;
+      width: 650px;
+      line-height: 2.2em;
     }
-    a{
+    a {
       font-weight: bold;
       color: $color-dark-dark;
       margin-left: 5px;
     }
   }
-
   .slick-prev {
     left: 10px;
     z-index: 2;
@@ -61,4 +60,7 @@
     object-fit: cover;
     object-position: 10% 57%;
   }
+}
+.section-about-link {
+  padding-top: 8em;
 }

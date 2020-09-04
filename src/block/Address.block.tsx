@@ -12,7 +12,7 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
   const dataMENUSLIDE = useSlideMenu()
   const dataMENUPDF = useMenu()
   const dataABOUT = useAboutTaiko()
-  
+
   const settings = {
     centerMode: true,
     centerPadding: "50px",
@@ -42,24 +42,28 @@ const AddressBlock: React.SFC<AddressBlockProps> = () => {
     ],
   }
   return (
-    <section id="about" className="container-full block-address">
-      {dataNOTICE[0] ? (
-        <div className="container">
-          <div className="block-slide__new">
-            <span><b>{dataNOTICE[0].news}</b></span>
-            <div>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: `${dataNOTICE[0].description}`,
-                }}
-              ></p>
+    <section id="news" className="container-full block-address">
+      <div>
+        {dataNOTICE[0] ? (
+          <div className="container">
+            <div className="block-slide__new">
+              <span>
+                <b>{dataNOTICE[0].news}</b>
+              </span>
+              <div>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: `${dataNOTICE[0].description}`,
+                  }}
+                ></p>
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        ""
-      )}
-      <div className="container">
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="container section-about-link" id="about">
         <div className="row block-address__description-text">
           <div className="col-12">
             <img src={logo} alt="Logo taiko" />
