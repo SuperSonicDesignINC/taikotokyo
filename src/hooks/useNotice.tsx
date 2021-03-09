@@ -7,7 +7,7 @@ export default function useNotice() {
         nodes {
           Description
           News
-          LinkNotice
+          # LinkNotice
         }
       }
     }
@@ -15,6 +15,6 @@ export default function useNotice() {
   return queryNotice.allStrapiNotice.nodes.map(notice => ({
     description: notice.Description,
     news: notice.News,
-    link: notice.LinkNotice
+    // link: notice.LinkNotice
   }))
 }
