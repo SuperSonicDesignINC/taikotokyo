@@ -22,9 +22,9 @@ const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
       </div>
       <div className="container">
         <div className="row">
-           {dataInstagram.allInstaNode.edges.map((image, i) => (
+           {dataInstagram.allInstaNode.nodes.map((image, i) => (
             <div key={i} className="col-lg-4 col-md-6 instagram-block__item">
-              <Img fluid={image.node.localFile.childImageSharp.fluid} />
+               <Img fluid={image.localFile.childImageSharp.fluid} />
             </div>
           ))} 
         </div>
