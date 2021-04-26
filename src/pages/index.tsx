@@ -6,9 +6,12 @@ import LocationRefBlock from "../block/LocationRef.block"
 import FooterBlock from "../block/Footer.block"
 import InstagramFeedBlock from "../block/InstagramFeed.block"
 import SEO from "../components/seo"
+import useInstagram from "../hooks/useInstagram"
 export interface IndexPageProps {}
 
 const IndexPage: React.SFC<IndexPageProps> = () => {
+  const dataInstagram = useInstagram()
+  console.log(dataInstagram.allInstaNode.nodes)
   return (
     <LayoutContent>
       <SEO />      
