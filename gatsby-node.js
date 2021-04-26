@@ -4,7 +4,13 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     schema.buildObjectType({
       name: "instaNode",
       fields: {
-        localFile: {},
+        localFile: {
+          childImageSharp: {
+            fluid: {
+              src: "String!",
+            },
+          },
+        },
       },
       interfaces: ["Node"],
       extensions: {
