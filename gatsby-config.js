@@ -18,12 +18,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `10737971495`,
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -36,6 +30,12 @@ module.exports = {
         theme_color: `#0f0f0f`,
         display: `minimal-ui`,
         icon: `src/images/taiko-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `10737971495`,
       },
     },
     {
