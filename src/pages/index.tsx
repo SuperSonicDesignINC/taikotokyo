@@ -10,8 +10,6 @@ import useInstagram from "../hooks/useInstagram"
 export interface IndexPageProps {}
 
 const IndexPage: React.SFC<IndexPageProps> = () => {
-  const dataInstagram = useInstagram()
-  console.log(dataInstagram.allInstaNode.nodes)
   return (
     <LayoutContent>
       <SEO />      
