@@ -8,7 +8,7 @@ export default function () {
             localFile {
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
