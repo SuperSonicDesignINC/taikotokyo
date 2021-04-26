@@ -7,7 +7,7 @@ export interface InstagramFeedBlockProps {}
 const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
   const iconInstagram = require("../images/icons/instagram.svg") as string
   const dataInstagram = useInstagram()
-  console.log(dataInstagram.allInstaNode.nodes[0].username)
+  console.log(dataInstagram.allInstaNode.nodes)
   return (
     <div id="chef" className="container instagram-block">
       <div className="instagram-block__title">
