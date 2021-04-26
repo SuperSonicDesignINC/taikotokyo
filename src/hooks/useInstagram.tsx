@@ -5,6 +5,7 @@ export default function () {
       allInstaNode(limit: 9, sort: { order: DESC, fields: timestamp }) {
     
           nodes {
+            username
             localFile {
               childImageSharp {
                 fluid {
