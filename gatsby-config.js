@@ -38,6 +38,7 @@ module.exports = {
         username: `10737971495`,
       },
     },
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
