@@ -4,7 +4,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     schema.buildObjectType({
       name: "instaNode",
       fields: {
-        localFile: "String!",
+        localFile: {},
       },
       interfaces: ["Node"],
       extensions: {
