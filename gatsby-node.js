@@ -2,7 +2,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = [
     schema.buildObjectType({
-      name: "googleSheetDbRow",
+      name: "allInstaNode",
       fields: {
         username: "String!",
       },
