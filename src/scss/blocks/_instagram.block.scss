@@ -71,3 +71,85 @@
   border: 0;
   overflow: hidden;
 }
+
+
+.instagram-feed{
+  width: 100%;
+  min-height: 1400px;
+  overflow: hidden;
+  @media screen and (max-width: 1200px){
+    min-height: 1160px;
+  }
+  @media screen and (max-width: 992px){
+    min-height: 3420px;
+  }
+  @media screen and (max-width: 768px){
+    min-height: 2510px;
+  }
+  @media screen and (max-width: 576px){
+    min-height: 2560px;
+  }
+  @media screen and (max-width: 550px){
+    min-height: 2490px;
+  }
+  @media screen and (max-width: 535px){
+    min-height: 2410px;
+  }
+  @media screen and (max-width: 520px){
+    min-height: 2325px;
+  }
+  @media screen and (max-width: 480px){
+    min-height: 2220px;
+  }
+  @media screen and (max-width: 460px){
+    min-height: 2080px;
+  }
+  @media screen and (max-width: 440px){
+    min-height: 2020px;
+  }
+  @media screen and (max-width: 420px){
+    min-height: 1920px;
+  }
+  @media screen and (max-width: 415px){    
+    min-height: 7455px;
+  }
+  @media screen and (max-width: 405px){    
+    min-height: 7255px;
+  }
+  @media screen and (max-width: 395px){    
+    min-height: 7120px;
+  }
+  @media screen and (max-width: 387px){    
+    min-height: 6975px;
+  }
+  @media screen and (max-width: 380px){    
+    min-height: 6855px;
+  }
+  @media screen and (max-width: 375px){    
+    min-height: 6755px;
+  }
+  @media screen and (max-width: 368px){    
+    min-height: 6615px;
+  }
+  @media screen and (max-width: 365px){    
+    min-height: 6555px;
+  }
+  @media screen and (max-width: 361px){    
+    min-height: 6475px;
+  }
+  @media screen and (max-width: 357px){    
+    min-height: 6395px;
+  }
+  @media screen and (max-width: 353px){    
+    min-height: 6315px;
+  }
+  @media screen and (max-width: 348px){    
+    min-height: 6215px;
+  }
+  @media screen and (max-width: 348px){    
+    min-height: 6215px;
+  }
+  @media screen and (max-width: 336px){    
+    min-height: 6000px;
+  }
+}

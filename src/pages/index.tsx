@@ -11,22 +11,12 @@ import { graphql, useStaticQuery } from "gatsby"
 export interface IndexPageProps {}
 
 const IndexPage: React.SFC<IndexPageProps> = () => {
-  const query = useStaticQuery(graphql`
-    {
-      allInstaNode {
-        nodes {
-          username
-        }
-      }
-    }
-  `)
-  console.log(query, "ELPEPE")
   return (
     <LayoutContent>
       <SEO />
       <SlideMainBlock />
       <AddressBlock />
-      {/* <InstagramFeedBlock /> */}
+      <InstagramFeedBlock />
       <LocationRefBlock />
       <FooterBlock />
     </LayoutContent>
