@@ -37,8 +37,8 @@ module.exports = {
       options: {
         username: "10737971495",
         access_token:
-          "EAAJY3ioHTO8BAG5wVjRsvnX3G3nfSK2pk47N9pkbt47KqRmakrxf65YkFxxgsEZCj1fSr4ZBQ5q5ZBKglov4UajZB3mQZBvtmZBlDgA61RXCDZA0K3KPZCCmZAXRx74GCH6bvkpgZA9zUNXkjW3AZBHYBJdO5wkZAE3OKaUaic1l6ZBxY3jZARdvLxncbLA7JX2RIYMWpmLBrjZCCtZAokuKgHgqBFwzjMcBD7xOYhjzVfxmwwGJ3AZDZD",
-        instagram_id: "310673663452130",
+          "IGQVJYbjhwVWZACYW5IQllNNjFEZAjJ1UC0xenUzeEMwVUt0VTNlbGJqa3M2UHRaZAXhrZAXdJU0lZAeHlla3Nua2NvamJ1N2ExbDdtQno5SUpRRmhlZA1VDU0dPYTEydmVKNm1rRHVZATDFXRlhZAakNnc251LQZDZD",
+        instagram_id: "8273be52681ebbf351fc06c5e49c0458",      
       },
     },
     // {

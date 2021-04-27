@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import useInstagram from "../hooks/useInstagram"
+// import useInstagram from "../hooks/useInstagram"
 export interface InstagramFeedBlockProps {}
 
 const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {

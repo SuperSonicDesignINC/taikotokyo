@@ -6,15 +6,24 @@ import LocationRefBlock from "../block/LocationRef.block"
 import FooterBlock from "../block/Footer.block"
 import InstagramFeedBlock from "../block/InstagramFeed.block"
 import SEO from "../components/seo"
-import useInstagram from "../hooks/useInstagram"
+import { graphql, useStaticQuery } from "gatsby"
+
 export interface IndexPageProps {}
 
 const IndexPage: React.SFC<IndexPageProps> = () => {
-  const dataInstagram = useInstagram()
-  console.log(dataInstagram.allInstaNode.nodes)
+  const query = useStaticQuery(graphql`
+    {
+      allInstaNode {
+        nodes {
+          username
+        }
+      }
+    }
+  `)
+  console.log(query, "ELPEPE")
   return (
     <LayoutContent>
-      <SEO />      
+      <SEO />
       <SlideMainBlock />
       <AddressBlock />
       {/* <InstagramFeedBlock /> */}
