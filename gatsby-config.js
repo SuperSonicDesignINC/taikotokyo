@@ -35,10 +35,12 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: "4254607630",
-        // access_token:
-        //   "IGQVJYbjhwVWZACYW5IQllNNjFEZAjJ1UC0xenUzeEMwVUt0VTNlbGJqa3M2UHRaZAXhrZAXdJU0lZAeHlla3Nua2NvamJ1N2ExbDdtQno5SUpRRmhlZA1VDU0dPYTEydmVKNm1rRHVZATDFXRlhZAakNnc251LQZDZD",
-        // instagram_id: "8273be52681ebbf351fc06c5e49c0458",      
+        username: `10737971495`,
+        access_token: "IGQVJXR3NxTmxsM25lSUdITVZAXTlVCRk5qOW96MTdZAUVZAfazFxaVdmZAW1iUFN0U204Q1pJLUNZALWpVS2MzcVdBN1d4aGk4NktKMndaQlIwS0xfRXpWMlFwQmNvUkEyTVEydmpZAREI0akxqMm9BTDVSSwZDZD",
+        instagram_id: "310673663452130",
+        paginate: 100,
+        maxPosts: 1000,
+        hashtags: true
       },
     },
     // {
