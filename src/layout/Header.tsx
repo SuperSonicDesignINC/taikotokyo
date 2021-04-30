@@ -33,10 +33,9 @@ const Header: React.SFC<HeaderProps> = () => {
   const [menuItems] = useState([
     { id: 0, item: "お知らせ", target: "#news" },
     { id: 1, item: "TAIKO について", target: "#about" },
-    { id: 2, item: "メニュー", target: "#menu" },
-    { id: 3, item: "お品書き", target: "#menu" },
+    { id: 2, item: "お品書き", target: "#menu" },
     {
-      id: 4,
+      id: 3,
       item: "ドリンクメニュー",
       target: "#menu",
     },
@@ -86,7 +85,11 @@ const Header: React.SFC<HeaderProps> = () => {
                 <div className="container">
                   <ul>
                     {menuItems.map((item, i) => (
-                      <li key={i} onClick={() => scrollTo(item.target)}>
+                      <li
+                        key={i}
+                        onClick={() => scrollTo(item.target)}
+                        className="breakpoint-992"
+                      >
                         {i === 2 || i === 3 ? (
                           <a
                             href={
@@ -96,24 +99,35 @@ const Header: React.SFC<HeaderProps> = () => {
                                 ? dataMENUPDF[0].drinkMenu
                                 : ""
                             }
+                            onClick={() => handleShowMenu()}
                             target="_blank"
                             rel="noreferrer"
-                            className={`u-text-capitalize ${
-                              i === 2 || i === 3 ? "display-item" : ""
-                            }`}
+                            className="u-text-capitalize"
                           >
                             {item.item}
                           </a>
                         ) : (
                           <a
-                            className={`u-text-capitalize ${
-                              i === 2 || i === 3 ? "display-item" : ""
-                            }`}
+                            className="u-text-capitalize"
                             onClick={() => handleShowMenu()}
                           >
                             {item.item}
                           </a>
                         )}
+                      </li>
+                    ))}
+                    {menuItems.map((item, i) => (
+                      <li
+                        key={i}
+                        onClick={() => scrollTo(item.target)}
+                        className="responsive-class"
+                      >
+                        <a
+                          className="u-text-capitalize"
+                          onClick={() => handleShowMenu()}
+                        >
+                          {item.item}
+                        </a>
                       </li>
                     ))}
                     <li>

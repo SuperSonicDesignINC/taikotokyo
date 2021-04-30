@@ -91,6 +91,9 @@
               margin-right: 5px;
             }
           }
+          .display-item-menu{
+
+          }
         }
       }
     }
@@ -172,9 +175,9 @@
   .block-address span {
     font-size: 1rem;
   }
-  .block-address__title-description{
+  .block-address__title-description {
     width: 300px;
-    margin: auto;    
+    margin: auto;
   }
   .block-about-chef {
     .row {
@@ -287,7 +290,7 @@
       width: 120px;
     }
   }
-  .block-address__title-description{
+  .block-address__title-description {
     margin-left: -10px;
   }
   .instagram-block__title__link {
@@ -299,5 +302,20 @@
     height: 25px;
 
     left: -35px;
+  }
+}
+.breakpoint-992{
+  display: none;
+}
+.responsive-class{
+  display: block;
+}
+
+@media screen and (max-width: 992px) {
+  .breakpoint-992 {
+    display: block;
+  }
+  .responsive-class{
+    display: none;
   }
 }

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Taiko Tokyo",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "日本料理TAIKO",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Taiko",
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
