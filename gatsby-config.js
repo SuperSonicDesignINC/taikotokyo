@@ -33,6 +33,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `10737971495`,
+      },
+    },
+    {
       resolve: `gatsby-source-strapi`,
       options: {
         // apiURL: `http://localhost:1337`,
