@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 export interface InstagramFeedBlockProps {}
 
 const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
-  const iconInstagram = require("../images/icons/instagram.svg") as string
+  const iconInstagram = require("../images/icons/instagram.svg") as string  
   return (
     <div id="chef" className="container instagram-block">
       <div className="instagram-block__title">
@@ -25,11 +25,7 @@ const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
             src="https://embedsocial.com/facebook_album/pro_instagram/487aa8b6278b7cbb890f112dfb8b17e65e527637"
             frameBorder="0"
           ></iframe>
-          {/* {dataInstagram.allInstaNode.nodes.map((image, i) => (
-            <div key={i} className="col-lg-4 col-md-6 instagram-block__item">
-               <Img fluid={image.localFile.childImageSharp.fluid} />
-            </div>
-          ))}  */}
+
         </div>
       </div>
     </div>
