@@ -2,9 +2,11 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = [
     schema.buildObjectType({
-      name: "allInstaNode",
+      name: "instaNode",
       fields: {
-        publicURL: "String!",
+        localFile: {
+          publicURL: "String!",
+        },
       },
       interfaces: ["Node"],
       extensions: {
