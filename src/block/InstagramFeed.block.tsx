@@ -7,14 +7,10 @@ const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
   const iconInstagram = require("../images/icons/instagram.svg") as string
   const dataREST = useStaticQuery(graphql`
     query {
-      allInstaNode(sort: { order: DESC, fields: timestamp }, limit: 20) {
+      allInstaNode {
         nodes {
           localFile {
-            childImageSharp {
-              fixed {
-                ...GatsbyImageSharpFixed
-              }
-            }
+            publicURL
           }
         }
       }
@@ -46,11 +42,12 @@ const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
             frameborder="0"
             marginheight="0"
             marginwidth="0"
-          ></iframe> */}
+          ></iframe>  */}
 
           {dataREST.allInstaNode.nodes.map((image, i) => (
             <div key={i} className="col-lg-3 col-md-6 instagram-block__item">
-              <Img fixed={image.localFile.childImageSharp.fixed} />
+              {/* <Img fluid={image.localFile.childImageSharp.fluid} /> */}
+              <img src={image.localFile.publicURL} />
             </div>
           ))}
         </div>

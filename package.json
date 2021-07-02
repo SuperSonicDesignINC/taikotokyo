@@ -4,7 +4,7 @@
   "description": "日本料理TAIKO",
   "version": "0.1.0",
   "author": "Taiko",
-  "dependencies": {
+  "dependencies": {    
     "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "gatsby": "^2.23.12",
