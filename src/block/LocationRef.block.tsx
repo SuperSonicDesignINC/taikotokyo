@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react"
-import { URL } from "../config/config"
-import axios from "axios"
+import React from "react"
 import useAddress from "../hooks/useAddress"
 export interface LocationRefBlockProps {}
 

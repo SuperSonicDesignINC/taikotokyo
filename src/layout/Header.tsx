@@ -131,15 +131,15 @@ const Header: React.SFC<HeaderProps> = () => {
                       </li>
                     ))}
                     <li>
-                      <Link
-                        to="https://www.instagram.com/nihonryouritaiko/"
+                      <a
+                        href="https://www.instagram.com/nihonryouritaiko/"
                         className="display-item"
                         target="_blank"
                         rel="noreferrer"
                       >
                         <img src={iconInstagram} alt="Instagram" />
                         @nihonryouritaiko
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>

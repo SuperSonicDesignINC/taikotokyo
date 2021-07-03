@@ -1,6 +1,6 @@
 // Text utilities
 
-.u-align-center{
+.u-align-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,13 +12,31 @@
 .u-text-justify {
   text-align: justify;
 }
-.u-text-bold{
+.u-text-bold {
   font-weight: bold;
 }
-.u-text-center{
+.u-text-center {
   text-align: center;
 }
 
-.u-height-100{
+.u-height-100 {
   height: calc(100vh - 51px);
+}
+
+._2R-kh {
+  ._wPDyp {
+    flex-basis: calc(25% - 10px);
+    @media screen and (max-width: 992px) {
+      flex-basis: calc(33% - 10px);
+    }
+    @media screen and (max-width: 768px) {
+      flex-basis: calc(50% - 10px);
+    }
+    @media screen and (max-width: 368px) {
+      flex-basis: calc(100% - 10px);
+    }
+    ._3xnQP:hover {
+      display: none;
+    }
+  }
 }
