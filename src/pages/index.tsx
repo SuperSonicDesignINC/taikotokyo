@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import LayoutContent from "../layout/LayoutContent"
 import SlideMainBlock from "../block/SlideMain.block"
 import AddressBlock from "../block/Address.block"
@@ -9,7 +9,9 @@ import SEO from "../components/seo"
 import { graphql, useStaticQuery } from "gatsby"
 
 export interface IndexPageProps {}
-window.console.log = () => {}
+useEffect(() => {
+  window.console.log = () => {}
+}, []);
 const IndexPage: React.SFC<IndexPageProps> = () => {
   return (
     <LayoutContent>

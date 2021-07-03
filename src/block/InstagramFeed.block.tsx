@@ -5,8 +5,7 @@ import InstagramFeed from "react-ig-feed"
 import "react-ig-feed/dist/index.css"
 export interface InstagramFeedBlockProps {}
 
-const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
-  window.console.log = () => {}
+const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {  
   const iconInstagram = require("../images/icons/instagram.svg") as string
   const token_access =
     "IGQVJYeFhZAN1lmazNYWWhPNExCcm5lcVdDaEotMkxUSENCbGhTYnN4YTZAWdXo0dDJCYUFzR1VDdVVPS2p2amNCb2toMXNNeE9VYnZAHSkpvVzdERFE4WXp2M1dsc3RSMjNNZAlp2Nm5zSGhQbjM1ZA3h0MwZDZD"
