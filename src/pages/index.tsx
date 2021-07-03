@@ -9,10 +9,10 @@ import SEO from "../components/seo"
 import { graphql, useStaticQuery } from "gatsby"
 
 export interface IndexPageProps {}
-useEffect(() => {
-  window.console.log = () => {}
-}, []);
 const IndexPage: React.SFC<IndexPageProps> = () => {
+  useEffect(() => {
+    window.console.log = () => {}
+  }, []);
   return (
     <LayoutContent>
       <SEO />
