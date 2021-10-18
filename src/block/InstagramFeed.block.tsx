@@ -5,10 +5,10 @@ import InstagramFeed from "react-ig-feed"
 import "react-ig-feed/dist/index.css"
 export interface InstagramFeedBlockProps {}
 
-const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {  
+const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
   const iconInstagram = require("../images/icons/instagram.svg") as string
   const token_access =
-    "IGQVJYZAmtQRjdNTEpvVjk4UVFxZA05ES0VXTWRjakNMMjJOYjJDb251WlV6S2tiRHpPTkF6WklkSU45aDMyTzRaSmUtX0QwR3BZAQ1BFNkt3c2ozOXF6ODhtQWdPRGd2ZAHNQVUZA1clZAnbF80NUR0YlJGcAZDZD"
+    "IGQVJXNHVmc0RxN1J4MVd0a3VWcjNUTVhLN1ZArZAjllZAk5MWVczM096REhQZA09CaGtZAVkZAuUEJoZAGE5LVFhbGJWbGlXdnZATYXZAQVFREdkxMZAnMwZAU8xak5GdG9LWjhsRFo1SzVIaGhSNXhmcWRGcE1WegZDZD"
   return (
     <div id="chef" className="container instagram-block">
       <div className="instagram-block__title">
