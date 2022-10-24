@@ -1,14 +1,14 @@
-import React from "react"
+import React, { FC } from "react"
 import Img from "gatsby-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import InstagramFeed from "react-ig-feed"
 import "react-ig-feed/dist/index.css"
-export interface InstagramFeedBlockProps {}
+export interface InstagramFeedBlockProps { }
 
-const InstagramFeedBlock: React.SFC<InstagramFeedBlockProps> = () => {
+const InstagramFeedBlock: React.FC<InstagramFeedBlockProps> = () => {
   const iconInstagram = require("../images/icons/instagram.svg") as string
   const token_access =
-    "IGQVJVUlkwa3pIeDFrVDJwVE45STllMVpyZAnRjdTFLa2dMSndTaWxONlBUaFdlamRVbTFsWXNha2tweDlsQ2lLdGE5VXBvR0lpWnFvcVRHUXprX0JTeS1SaVNld2RTdzlNc1B5ZAkZAkMnJtejdDUV9sRgZDZD"
+    "IGQVJVMWhpUlZAJRXFzZAF9qLUdiVE1PeHdpUGVRNUNtR0tmMU5JMUN6Y1BjSzVnaVZAsd0NaRTNmcWdLVHlkYlFEY1RiZAUtmbm1PZADVPVDZAreFNzYVlnNGFibFlQTFdoVnBWdkc1cG5BTEVlMlZAZAQkJOLQZDZD"
   return (
     <div id="chef" className="container instagram-block">
       <div className="instagram-block__title">
