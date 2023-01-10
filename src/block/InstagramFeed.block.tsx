@@ -8,7 +8,7 @@ export interface InstagramFeedBlockProps { }
 const InstagramFeedBlock: React.FC<InstagramFeedBlockProps> = () => {
   const iconInstagram = require("../images/icons/instagram.svg") as string
   const token_access =
-    "IGQVJVTU5LUUFkQkpPX3N1WW5fcGtNTXdnTVN2NnJtdEFad1FHc3Jrd1lBOEpvaW04ak96T0JoaGEwSjc4TjRENEVEVUxBNksyc01OOGxWazRIa3YwUEZAtV1EyUjVNUDBsam5na2dEaEd5UVc4VHlnRwZDZD"
+    "IGQVJXaGp3YW1JRzVlenNfcE1nTjRVQS14ZA09DMUV2ejFvVTJXMmw3RWlfRnZAtV2l3MXBxSkNhQXI4WnRxclhiejJlRWgyeHYyLUJHWGNCMWlDSXItWll2UXFFRVFtRmJEM2doTGZAaOFkwcFFKTTVCeAZDZD"
   return (
     <div id="chef" className="container instagram-block">
       <div className="instagram-block__title">
