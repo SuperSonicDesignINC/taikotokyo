@@ -18,7 +18,7 @@ const IndexPage: React.SFC<IndexPageProps> = () => {
       <SEO />
       <SlideMainBlock />
       <AddressBlock />
-      <InstagramFeedBlock />
+      {/* <InstagramFeedBlock /> */}
       <LocationRefBlock />
       <FooterBlock />
     </LayoutContent>
