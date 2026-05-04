@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-scss-typescript`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-source-filesystem`,
