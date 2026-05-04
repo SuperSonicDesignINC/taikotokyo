@@ -27,12 +27,9 @@
     "react-slick": "^0.26.1",
     "slick-carousel": "^1.8.1"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "devDependencies": {
     "gatsby-plugin-scss-typescript": "^4.0.13",
-    "sass": "^1.77.8",
+    "node-sass": "4.14.1",
     "prettier": "2.0.5"
   },
   "keywords": [
