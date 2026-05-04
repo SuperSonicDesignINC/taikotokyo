@@ -28,7 +28,7 @@
     "slick-carousel": "^1.8.1"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "devDependencies": {
     "gatsby-plugin-scss-typescript": "^4.0.13",
